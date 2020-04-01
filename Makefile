@@ -17,7 +17,7 @@ clean:
 .PHONY: venv
 venv:
 	if [ ! -d .venv ] ; then \
-		virtualenv -p ~/.pyenv/versions/3.8.2/bin/python .venv ; \
+		~/.pyenv/versions/3.8.2/bin/python -m venv .venv ; \
 	fi
 
 .PHONY: boost
