@@ -44,9 +44,13 @@ boost: venv
 			); \
 		fi ; \
 		\
-		(cd boost_$(BOOST_VERSION) && ./b2 install link=static runtime-link=static) ; \
+		(cd boost_$(BOOST_VERSION) && ./b2 install \
+			link=static \
+			runtime-link=static \
+		) ; \
 	fi
 
+# FIXME: move into CMakeLists.txt, make it independently usable for CLion
 .PHONY: cmake
 cmake: boost
 	CWD=$(shell pwd) ; \
