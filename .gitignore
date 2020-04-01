@@ -1,0 +1,5 @@
+/.boost
+/.venv
+/boost_*
+/build
+boost_*.tar.bz2
