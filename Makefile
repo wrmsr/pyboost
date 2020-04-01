@@ -44,7 +44,7 @@ boost: venv
 			); \
 		fi ; \
 		\
-		(cd boost_$(BOOST_VERSION) && ./b2 install) ; \
+		(cd boost_$(BOOST_VERSION) && ./b2 install link=static runtime-link=static) ; \
 	fi
 
 .PHONY: cmake
