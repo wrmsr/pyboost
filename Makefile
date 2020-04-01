@@ -1,4 +1,4 @@
-# https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.bz2
+# 
 
 SHELL:=/bin/bash
 
@@ -23,6 +23,10 @@ venv:
 .PHONY: boost
 boost: venv
 	CWD=$(shell pwd) ; \
+	\
+	if [ ! -f boost_$(BOOST_VERSION).tar.bz2 ] ; then \
+		wget https://dl.bintray.com/boostorg/release/$(shell echo $(BOOST_VERSION) | tr '_' '.')/source/boost_$(BOOST_VERSION).tar.bz2 ; \
+	fi ; \
 	\
 	if [ ! -d .boost ] ; then \
 		if [ ! -d boost_$(BOOST_VERSION) ] ; then \
