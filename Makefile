@@ -62,7 +62,7 @@ cmake: boost
 			BOOST_ROOT=$$CWD/.boost \
 			cmake .. \
 			-DPYTHON_LIBRARY=$$CWD/.venv/lib \
-			-DPYTHON_INCLUDE_DIR=$$CWD/.venv/include/python3.8 \
+			-DPYTHON_INCLUDE_DIR=$(shell $(CWD)/.venv/python -c 'import sysconfig; print(sysconfig.get_config_var("INCLUDEPY"))') \
 		); \
 	fi
 
